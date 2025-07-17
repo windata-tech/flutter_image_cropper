@@ -7,7 +7,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:http/http.dart' as http show readBytes;
+// import 'package:http/http.dart' as http show readBytes;
 
 import './base.dart';
 
@@ -31,7 +31,8 @@ class CroppedFile extends CroppedFileBase {
     if (_initBytes != null) {
       return Future<Uint8List>.value(_initBytes.asUnmodifiableView());
     }
-    return http.readBytes(Uri.parse(path));
+    // return http.readBytes(Uri.parse(path));
+    throw UnimplementedError('CroppedFile._bytes is not implemented on web.');
   }
 
   @override
